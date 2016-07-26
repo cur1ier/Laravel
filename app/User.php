@@ -14,7 +14,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
+    
+    Route::get('users', function()
+    {
+        return 'Users!';
+    });
     /**
      * The attributes that should be hidden for arrays.
      *

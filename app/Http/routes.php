@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,6 +10,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+#user
+
+Route::get('/new', function () {
+    return ('welcome');
+});
+
+Route::get('/welcome', function () {
+    return redirect('/');
+});
+
+Route::get('/','HomeController@index');
+
+#admin
+Route::group(['prefix' => 'admin'],function(){
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('/new', function () {
+        return ('admin welcome');
+    });
+
+    Route::get('/welcome', function () {
+        return redirect('/');
+    });
 });
